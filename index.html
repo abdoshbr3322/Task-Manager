@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <title>Task Mangager</title>
+  </head>
+  <body>
+    <div class="navbar-opener">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="wrapper">
+      <div class="navbar">
+        <aside>
+          <div class="nav-head">
+            <h3>Task Manager</h3>
+            <div class="navbar-closer">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <button data-type=".month">This Month</button>
+            </li>
+            <li class="nav-item">
+              <button data-type=".books">Books</button>
+            </li>
+            <li class="nav-item">
+              <button data-type=".projects">Projects</button>
+            </li>
+            <li class="nav-item">
+              <button data-type=".skills">Skills</button>
+            </li>
+            <li class="nav-item">
+              <button data-type=".other">Other Targets</button>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <div class="main">
+        <div class="targets month" data-heading="These Are Your Targets For This Month">
+          <h2 class="heading">There Are No Targets For This Month</h2>
+        </div>
+        <div class="targets books" data-heading="Gonna Read These Books">
+          <h2 class="heading">You Don't Have Books To Read</h2>
+        </div>
+        <div class="targets projects" data-heading="You Have These Projects">
+          <h2 class="heading">There Are No Projects For You</h2>
+        </div>
+        <div class="targets skills" data-heading="You Have These Skills To Gain">
+          <h2 class="heading">You Don't Have Any Skill To Improve</h2>
+        </div>
+        <div class="targets other" data-heading="You Have Other Targets Here">
+          <h2 class="heading">You Don't Have Other Targets</h2>
+        </div>
+      </div>
+    </div>
+    <div class="add-task">
+      <button><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <div class="add-dashboard dashboard-wrapper">
+      <div class="dashboard">
+        <div class="dash-head">
+          <h2>Fill This Form</h2>
+          <button class="dash-closer"><i class="fa-solid fa-xmark"></i> </button>
+        </div>
+        <form method="post">
+          <div class="input-wrapper">
+            <div class="label-wrapper title">
+              <label for="title">Type The Title Here</label>
+              <input type="text" name="title" id="title" required class="input">
+            </div>
+            <div class="label-wrapper progress">
+              <label for="progress">Progress</label>
+              <input type="number" name="progress" id="progress" placeholder="0" value="0" min="0" max="100" class="input">
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <div class="label-wrapper info">
+              <label for="info">Info</label>
+              <textarea name="info" id="info" class="input"></textarea>
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <div class="checkboxs">
+              <div class="priority">
+                <label for="priority" style="display: inline;">Priority</label>
+                <input type="checkbox" id="priority" name="" value="priority">
+              </div>
+              <div class="month">
+                <label for="month" style="display: inline;">Month Targets</label>
+                <input type="checkbox" id="month" name="" value="this-month">
+              </div>
+            </div>
+            <div class="catg">
+              <label for="catg">Please select a category</label>
+              <select name="category" id="catg">
+                <option value="books">Books</option>
+                <option value="projects">Projects</option>
+                <option value="skills">Skills</option>
+                <option value="other" selected>Other Targets</option>
+              </select>
+            </div>
+          </div>
+          <div class="dash-foot">
+            <input type="submit" value="Add Task">
+            <input type="reset" value="Cancel">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="edit-dashboard dashboard-wrapper">
+      <div class="dashboard">
+        <div class="dash-head">
+          <h2>Edit This Target</h2>
+          <button class="dash-closer"><i class="fa-solid fa-xmark"></i> </button>
+        </div>
+        <form method="post">
+          <div class="input-wrapper">
+            <div class="label-wrapper title">
+              <label for="title">Type The Title Here</label>
+              <input type="text" name="title" id="title" required class="input">
+            </div>
+            <div class="label-wrapper progress">
+              <label for="progress">Progress</label>
+              <input type="number" name="progress" id="progress" placeholder="0" value="0" min="0" max="100" class="input">
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <div class="label-wrapper info">
+              <label for="info">Info</label>
+              <textarea name="info" id="info" class="input"></textarea>
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <div class="checkboxs">
+              <div class="priority">
+                <label for="priority" style="display: inline;">Priority</label>
+                <input type="checkbox" id="priority" name="" value="priority">
+              </div>
+              <div class="month">
+                <label for="month" style="display: inline;">Month Targets</label>
+                <input type="checkbox" id="month" name="" value="this-month">
+              </div>
+            </div>
+            <div class="catg">
+              <label for="catg">Please select a category</label>
+              <select name="category" id="catg">
+                <option value="books">Books</option>
+                <option value="projects">Projects</option>
+                <option value="skills">Skills</option>
+                <option value="other" selected>Other Targets</option>
+              </select>
+            </div>
+          </div>
+          <div class="dash-foot">
+            <input type="submit">
+            <input type="reset" value="Cancel">
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./js/main.js" charset="utf-8"></script>
+    <script src="./js/edit.js" charset="utf-8"></script>
+    <script src="./js/storage.js" charset="utf-8"></script>
+    <script src="./js/remove.js" charset="utf-8"></script>
+  </body>
+</html>
