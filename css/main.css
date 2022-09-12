@@ -109,8 +109,7 @@ aside .nav-head,
 }
 @media (min-width: 768px) {
   .navbar {
-    width: 30%;
-    flex-shrink: 0;
+    min-width: 30%;
   }
 }
 aside {
@@ -171,9 +170,6 @@ aside .nav-item button:hover {
   flex-grow: 1;
   padding: 30px;
 }
-@media (mi-width: 768px) {
-  flex-basis: 70%;
-}
 .targets:not(.month) {
   display: none;
 }
@@ -189,6 +185,11 @@ aside .nav-item button:hover {
   box-shadow: 1px 1px 25px 0 rgba(0, 0, 0, 0.15);
   position: relative;
 }
+@media (max-width: 767px) {
+  .targets .target {
+    text-align: center;
+  }
+}
 .targets .target::after {
   content: "";
   position: absolute;
@@ -198,6 +199,12 @@ aside .nav-item button:hover {
   width: 65px;
   height: 2px;
   background-color: var(--main-color);
+}
+@media (max-width: 767px) {
+  .targets .target .target-head {
+    flex-wrap: wrap;
+    text-align: center;
+  }
 }
 .targets .target .title {
   font-size: 17px;
@@ -212,7 +219,16 @@ aside .nav-item button:hover {
 .targets .target .remove {
   font-size: 20px;
   cursor: pointer;
+  margin-left: 15px;
   transition: var(--main-transition);
+}
+@media (max-width: 767px) {
+  .targets .target .remove {
+    flex-basis: 100%;
+    margin: auto;
+    margin-bottom: 12px;
+    order: -1;
+  }
 }
 .targets .target .remove:active {
   transform: scale(0.86);
@@ -271,6 +287,7 @@ aside .nav-item button:hover {
   align-items: flex-start;
   z-index: 9999;
   display: none;
+  overflow: auto;
 }
 .dashboard-wrapper.active {
   display: flex;

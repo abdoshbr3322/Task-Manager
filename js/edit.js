@@ -31,9 +31,6 @@ class Dashboard {
   hideDashboard() {
     this.dashboard.classList.remove("active");
   }
-  get targets() {
-    return this.#targetsStorage;
-  }
   saveTarget(e) {
     let task = {
       title: this.titleField.value,
@@ -48,6 +45,9 @@ class Dashboard {
     let id = this.getId();
     this.targets[id] = task;
     localStorage.setItem("targets" ,JSON.stringify(this.targets));
+  }
+  get targets() {
+    return this.#targetsStorage;
   }
   getId() {
     // create new Unique id
