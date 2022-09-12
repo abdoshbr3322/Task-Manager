@@ -1,9 +1,10 @@
+// get the targets from the localStorage if any
 let targets = JSON.parse(localStorage.getItem("targets")) || null;
 
-// Get Saved Targets If Any
-if (targets) showData();
+// show saved targets if any
+if (targets) showData(targets);
 
-function showData() {
+function showData(targets) {
   for (let ID in targets) {
     let targetInfo = targets[ID];
     let targetBox = createBox(ID);

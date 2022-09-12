@@ -22,7 +22,8 @@ class Dashboard {
     this.dashboard.addEventListener("click" ,(e) => {
       if (e.target === this.dashboard) this.hideDashboard();
     });
-    this.form.addEventListener("submit" ,(e) => this.formSubmitted(e));
+    // save the target when submit the form
+    this.form.addEventListener("submit" ,(e) => this.saveTarget(e));
   }
   showDashboard() {
     this.dashboard.classList.add("active");
@@ -33,7 +34,7 @@ class Dashboard {
   get targets() {
     return this.#targetsStorage;
   }
-  formSubmitted(e) {
+  saveTarget(e) {
     let task = {
       title: this.titleField.value,
       progress: this.progressField.value,
@@ -43,11 +44,13 @@ class Dashboard {
     this.checkboxs.forEach((box) => {
       task[box.id] = box.checked;
     });
+    // create new Unique id or get the id from the target box
     let id = this.getId();
     this.targets[id] = task;
     localStorage.setItem("targets" ,JSON.stringify(this.targets));
   }
   getId() {
+    // create new Unique id
     return Date.now();
   }
 }
@@ -78,6 +81,7 @@ class Edit extends Dashboard {
     this.dashboard.classList.add("active");
   }
   getId() {
+    // get the id from the target box
     return this.targetBox.dataset.id;
   }
 }

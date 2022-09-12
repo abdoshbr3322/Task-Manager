@@ -5,19 +5,26 @@ removeBtns.forEach((btn) => {
   btn.addEventListener('click' ,removeClicked)
 });
 
-let wait;
-let targetBox;
 function removeClicked(e) {
-  targetBox = e.currentTarget.parentElement.parentElement;
+  let = targetBox = e.currentTarget.parentElement.parentElement;
+  // hide the target from the page
   targetBox.style.display = "none";
-  showAlert();
-  wait = setTimeout(() => {
-    document.querySelector(".alert").remove();
-    removeTarget(targetBox.dataset.id);
-  }, 5000);
+  let waitAlert = setTimeout((targetBox) => { // remove the target when time is out
+    alert.remove();
+    removeTarget(targetBox);
+  }, 5000, targetBox);
+  // show alert and undo button
+  let alert = showAlert(targetBox ,waitAlert);
 }
 
-function showAlert() {
+function removeTarget(targetBox) {
+  delete targets[parseInt(targetBox.dataset.id)];
+  targetBox.remove();
+  localStorage.setItem("targets" ,JSON.stringify(targets));
+}
+
+function showAlert(targetBox ,waitAlert) {
+  // create alert message
   let alert = document.createElement("div");
   let text = document.createTextNode("You have deleted a target");
   let undo = document.createElement("button");
@@ -28,21 +35,12 @@ function showAlert() {
   alert.appendChild(undo);
   undo.appendChild(undoText);
   document.body.appendChild(alert);
+
   // undo removing on click
   undo.addEventListener('click' ,function () {
-    document.querySelector(".alert").remove();
+    alert.remove();
     targetBox.style.display = "block";
-    clearTimeout(wait);
-  })
-}
-
-function removeTarget(id) {
-  targetBox.remove();
-  delete targets[parseInt(id)];
-  localStorage.setItem("targets" ,JSON.stringify(targets));
-}
-
-let test = {
-  name: "abdullah",
-  age: 16,
+    clearTimeout(waitAlert);
+  });
+  return alert;
 }
