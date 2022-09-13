@@ -99,7 +99,7 @@ aside .nav-head,
   cursor: pointer;
   background-color: var(--main-color);
 }
-@media (max-width: 767px) {
+@media (max-width: 575px) {
   .navbar-opener {
     display: block;
   }
@@ -185,7 +185,7 @@ aside .nav-item button:hover {
   box-shadow: 1px 1px 25px 0 rgba(0, 0, 0, 0.15);
   position: relative;
 }
-@media (max-width: 767px) {
+@media (max-width: 575px) {
   .targets .target {
     text-align: center;
   }
@@ -200,10 +200,10 @@ aside .nav-item button:hover {
   height: 2px;
   background-color: var(--main-color);
 }
-@media (max-width: 767px) {
+@media (max-width: 575px) {
   .targets .target .target-head {
     flex-wrap: wrap;
-    text-align: center;
+    justify-content: center;
   }
 }
 .targets .target .title {
@@ -222,7 +222,7 @@ aside .nav-item button:hover {
   margin-left: 15px;
   transition: var(--main-transition);
 }
-@media (max-width: 767px) {
+@media (max-width: 575px) {
   .targets .target .remove {
     flex-basis: 100%;
     margin: auto;
@@ -359,6 +359,7 @@ aside .nav-item button:hover {
 /* Hide arrows from: Firefox */
 .dashboard-wrapper .dashboard .input[type=number] {
   -moz-appearance: textfield;
+  padding-right: 24px; 
 }
 /* Show Percent mark in number field */
 .dashboard-wrapper .dashboard .label-wrapper.progress {

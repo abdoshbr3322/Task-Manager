@@ -1,6 +1,7 @@
 // get remove buttons
 const removeBtns = document.querySelectorAll(".target button.remove");
 
+// fire removeClicked on click
 removeBtns.forEach((btn) => {
   btn.addEventListener('click' ,removeClicked)
 });
@@ -12,6 +13,7 @@ function removeClicked(e) {
   let waitAlert = setTimeout((targetBox) => { // remove the target when time is out
     alert.remove();
     removeTarget(targetBox);
+    window.location.reload();
   }, 5000, targetBox);
   // show alert and undo button
   let alert = showAlert(targetBox ,waitAlert);
