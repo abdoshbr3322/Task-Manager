@@ -35,7 +35,7 @@ class Dashboard {
     let task = {
       title: this.titleField.value,
       progress: this.progressField.value,
-      info: this.infoField.value,
+      info: this.infoField.value || this.titleField.value,
       category: this.category.value,
     };
     this.checkboxs.forEach((box) => {
@@ -86,7 +86,7 @@ class Edit extends Dashboard {
   }
 }
 
-let waitTargets = setTimeout(function () {
+setTimeout(function () {
   let editDashboard = new Edit(
     document.querySelector(".edit-dashboard"),
     document.querySelectorAll(".target button.setting"),
