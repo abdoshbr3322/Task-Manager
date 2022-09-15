@@ -19,12 +19,6 @@ function removeClicked(e) {
   let alert = showAlert(targetBox ,waitAlert);
 }
 
-function removeTarget(targetBox) {
-  delete targets[parseInt(targetBox.dataset.id)];
-  targetBox.remove();
-  localStorage.setItem("targets" ,JSON.stringify(targets));
-}
-
 function showAlert(targetBox ,waitAlert) {
   // create alert message
   let alert = document.createElement("div");
@@ -45,4 +39,10 @@ function showAlert(targetBox ,waitAlert) {
     clearTimeout(waitAlert);
   });
   return alert;
+}
+
+function removeTarget(targetBox) {
+  delete targets[parseInt(targetBox.dataset.id)];
+  targetBox.remove();
+  localStorage.setItem("targets" ,JSON.stringify(targets));
 }
