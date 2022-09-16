@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 img {
   max-width: 100%;
@@ -99,7 +99,7 @@ aside .nav-head,
   cursor: pointer;
   background-color: var(--main-color);
 }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .navbar-opener {
     display: block;
   }
@@ -117,7 +117,7 @@ aside {
   width: 30%;
   height: 100vh;
   background-color: var(--main-color);
-  padding: 20px 30px;
+  padding: 20px 20px;
   color: #fff;
   z-index: 999;
 }
@@ -138,6 +138,7 @@ aside .nav-head {
 aside .nav-head h3 {
   font-size: 30px;
   font-weight: 600;
+  padding-left: 14px;
 }
 aside .nav-head .navbar-closer {
   font-size: 20px;
@@ -359,7 +360,7 @@ aside .nav-item button:hover {
 /* Hide arrows from: Firefox */
 .dashboard-wrapper .dashboard .input[type=number] {
   -moz-appearance: textfield;
-  padding-right: 24px; 
+  padding-right: 24px;
 }
 /* Show Percent mark in number field */
 .dashboard-wrapper .dashboard .label-wrapper.progress {
