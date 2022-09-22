@@ -38,7 +38,7 @@ function createBox(ID) {
     `</p>`,
     `<div class="target-foot">`,
       `<div class="progress">`,
-        `<div class="fill" data-progress="${targetInfo.progress}%" style="width: ${targetInfo.progress}%">`,
+        `<div class="fill" data-progress="${targetInfo.progress}%">`,
         `</div>`,
       `</div>`,
       `<button class="setting">`,
